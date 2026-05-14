@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crumb & Crown | Artisanal Bakery</title>
+    <style>
+        /* Base Styles from REAL WEBSITE */
+        body {
+            background-color: #c09c83;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Fixed Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(151, 114, 87, 0.95);
+            /* Consistent with brand colors */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: #fdfaf5;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            color: #fdfaf5;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD-qQo7RSPlHgQQYsv7DxeRPcwDs1jAwgu3A&s');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        /* Menu Grid - FIXED Image Dispersion */
+        .content-section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .menu-card {
+            background-color: #977257;
+            /* Matches table color from original */
+            border-radius: 12px;
+            overflow: hidden;
+            color: white;
+            padding-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Ensures all images are the same size and not dispersed */
+        .menu-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-card h3 {
+            margin: 20px 0 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .price {
+            color: #ff9800;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            /* Centers logo and text vertically */
+            gap: 15px;
+            /* Adds space between logo and name */
+            color: #fdfaf5;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo img {
+            height: 45px;
+            /* Adjust this height to fit your nav bar */
+            width: auto;
+            /* Keeps the logo proportions correct */
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="E:\Website\Logo.jpeg" alt="Logo">
+            <span>Crumb & Crown</span>
+        </div>
+        <div class="logo"></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Menu page.html">Menu</a></li>
+            <li><a href="About us.html">About</a></li>
+            <li><a href="Order Now Page.html">Order Now</a></li>
+            <li><a href="Review.html">Review</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Artisanal Bakery Excellence</h1>
+        <p>Freshly baked royal treats delivered to your door.</p>
+        <a href="Order Now Page.html"
+            style="margin-top: 20px; padding: 15px 30px; background-color: #977257; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s;">
+            Start Your Order
+        </a>
+    </section>
+
+    <section id="menu" class="content-section">
+        <h1>Our Signature Selection</h1>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD-qQo7RSPlHgQQYsv7DxeRPcwDs1jAwgu3A&s"
+                    alt="Sourdough">
+                <h3>Heritage Sourdough</h3>
+                <p>48-hour fermented artisanal loaf.</p>
+                <p class="price">RS 850</p>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpYhJZz6n_7Z3kBeJ1Qr7UyibvnUViXsTp0A&s"
+                    alt="Focaccia">
+                <h3>Rosemary Focaccia</h3>
+                <p>Topped with sea salt and fresh rosemary.</p>
+                <p class="price">RS 650</p>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYKqXVB4IqUdcGHylD8tfruiwqp3iL_TC5uA&s"
+                    alt="Croissant">
+                <h3>Butter Croissant</h3>
+                <p>Flaky layers of premium French butter.</p>
+                <p class="price">RS 450</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Order Now | Crumb & Crown</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #c09c83;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #473021;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(151, 114, 87, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: #fdfaf5;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #fdfaf5;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        /* Order Container */
+        .order-container {
+            max-width: 800px;
+            margin: 120px auto 50px;
+            background: #fdfaf5;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #977257;
+            text-align: center;
+        }
+
+        /* Form Elements */
+        input,
+        select {
+            padding: 12px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .item-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .qty {
+            width: 60px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-add {
+            background: #977257;
+            color: white;
+        }
+
+        .btn-order {
+            background: #ff9800;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn-remove {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+        }
+
+        /* Slip Styles */
+        #slip {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 2px dashed #977257;
+            background: #f4ece4;
+            border-radius: 10px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            /* Centers logo and text vertically */
+            gap: 15px;
+            /* Adds space between logo and name */
+            color: #fdfaf5;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo img {
+            height: 45px;
+            /* Adjust this height to fit your nav bar */
+            width: auto;
+            /* Keeps the logo proportions correct */
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="Logo.jpeg" alt="Logo">
+            <span>Crumb & Crown</span>
+        </div>
+        <div class="logo"></div>
+        <div class="logo"></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Menu page.html">Menu</a></li>
+            <li><a href="About us.html">About</a></li>
+            <li><a href="Order Now Page.html">Order Now</a></li>
+            <li><a href="Review.html">Review</a></li>
+        </ul>
+    </nav>
+
+    <div class="order-container">
+        <h2>Place Your Order</h2>
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <input id="name" placeholder="Full Name" style="flex:1">
+            <input id="email" placeholder="Email Address" style="flex:1">
+        </div>
+
+        <div id="items"></div>
+
+        <button class="btn-add" onclick="addItem()">+ Add Another Item</button>
+        <button class="btn-order" onclick="placeOrder()">Place Order Now</button>
+
+        <div id="slip">
+            <div style="text-align: center; margin-bottom: 20px; color: #27ae60;">
+                <h2 style="margin: 0;">✔ Order Confirmed!</h2>
+                <p>Your order has been placed. You will receive an email shortly.</p>
+            </div>
+
+
+
+            <div style="background: white; padding: 30px; border-radius: 10px; border: 1px solid #ddd; color: #473021;">
+                <h3
+                    style="font-family: 'Playfair Display'; color: #977257; border-bottom: 2px solid #977257; padding-bottom: 10px; margin-top: 0;">
+                    Order Receipt
+                </h3>
+
+                <p><b>Customer:</b> <span id="cName"></span></p>
+                <p><b>Email:</b> <span id="cEmail"></span></p>
+
+                <div id="orderList" style="margin: 20px 0;"></div>
+
+                <div
+                    style="border-top: 2px solid #977257; padding-top: 15px; display: flex; justify-content: space-between;">
+                    <h3 style="margin: 0;">Total (Inc. Delivery):</h3>
+                    <h3 style="margin: 0; color: #ff9800;">RS <span id="totalVal">0</span></h3>
+                </div>
+            </div>
+
+            <button onclick="window.print()"
+                style="background: #473021; color: white; width: 100%; margin-top: 20px; cursor: pointer; padding: 12px; border-radius: 8px; border: none; font-weight: bold;">
+                Download Receipt
+            </button>
+        </div>
+
+        <script>
+            const menu = {
+                "Breads & Rusk": [
+                    ["White Bread", 160], ["Brown Bread", 180], ["Multigrain Bread", 220],
+                    ["Whole Wheat Bread", 200], ["Garlic Bread", 250], ["Cheese Bread", 300],
+                    ["Chicken Bread", 420], ["Stuffed Chicken Bread", 480],
+                    ["Bread Roll", 40], ["Plain Rusk", 220], ["Milk Rusk", 250]
+                ],
+                "Classic Cakes": [
+                    ["Chocolate Cake", 850], ["Vanilla Cake", 700], ["Black Forest Cake", 900],
+                    ["Pineapple Cake", 1050], ["Lemon Tart Cake", 1150],
+                    ["Hyderabadi Special Cake", 1800], ["Marble Cake", 850],
+                    ["Honey Walnut Cake", 1900], ["Choco Alaska Cake", 2000]
+                ],
+                "Premium Cakes": [
+                    ["Ferrero Rocher Cake", 2000], ["Lotus Biscoff Cake", 2700],
+                    ["Red Velvet Cake", 2500], ["Three Milk Cake", 2600],
+                    ["Chocolate Mousse Cake", 2400], ["Mud Cake", 2300],
+                    ["Chocolate Heaven Cake", 2200], ["Dairy Milk Cake", 2300],
+                    ["Kit Kat Cake", 2700], ["Nutella Cake", 2700],
+                    ["Espresso Coffee Cake", 2200],
+                    ["Strawberry Cheesecake", 1800], ["Blueberry Cheesecake", 1900],
+                    ["Matilda Cake", 3000]
+                ],
+                "Pastries": [
+                    ["Chocolate Pastry", 150], ["Chocolate Fudge Pastry", 200],
+                    ["Nutella Pastry", 150], ["Ferrero Rocher Pastry", 220],
+                    ["Chocolate Éclair", 170], ["Caramel Éclair", 170]
+                ],
+                "Molten & Lava": [
+                    ["Chocolate Molten Lava", 140], ["Nutella Molten Lava", 170],
+                    ["White Chocolate Lava", 170]
+                ],
+                "Brownies": [
+                    ["Classic Chocolate Brownie", 150], ["Walnut Brownie", 180],
+                    ["Fudge Brownie", 180], ["Brownie with Ice Cream", 240]
+                ],
+                "Donuts": [
+                    ["Glazed Donut", 100], ["Chocolate Donut", 100], ["Filled Donut", 120],
+                    ["Sugar Donut", 90], ["Chocolate Sprinkle", 120],
+                    ["Strawberry Sprinkle", 120], ["Chocolate Frosted", 130],
+                    ["Vanilla Sprinkle", 120], ["Chocolate Heart", 150],
+                    ["Nutella Dream", 160], ["Smiley", 110],
+                    ["Powdered Chocolate Filled", 150],
+                    ["Toasted Coconut", 140], ["Coffee Marble", 140],
+                    ["Chocolate Marble", 140], ["Chocolate Balls", 160],
+                    ["Candy Crunch Delight", 170], ["Raffaello Delight", 180]
+                ]
+            };
+
+
+            function addItem() {
+                const row = document.createElement("div");
+                row.className = "item-row";
+                let catOptions = Object.keys(menu).map(c => `<option>${c}</option>`).join('');
+
+                row.innerHTML = `
+                <select class="cat" onchange="loadItems(this)">${catOptions}</select>
+                <select class="item" style="flex:1"></select>
+                <input type="number" value="1" min="1" class="qty">
+                <button class="btn-remove" onclick="this.parentElement.remove()">X</button>
+            `;
+                document.getElementById("items").appendChild(row);
+                loadItems(row.querySelector(".cat"));
+            }
+
+            function loadItems(sel) {
+                const itemSel = sel.parentElement.querySelector(".item");
+                itemSel.innerHTML = menu[sel.value].map(p => `<option value="${p[1]}">${p[0]} - RS ${p[1]}</option>`).join('');
+            }
+
+            function placeOrder() {
+                let subtotal = 0, html = "";
+                const deliveryFee = 150; // Fixed Delivery Fee
+                const nameInput = document.getElementById("name").value;
+                const emailInput = document.getElementById("email").value;
+
+                if (!nameInput || !emailInput) {
+                    alert("Please enter your name and email to confirm the order.");
+                    return;
+                }
+
+                document.querySelectorAll(".item-row").forEach(r => {
+                    let name = r.querySelector(".item").selectedOptions[0].text.split(" - ")[0];
+                    let price = +r.querySelector(".item").value;
+                    let qty = +r.querySelector(".qty").value;
+                    let sum = price * qty;
+                    subtotal += sum;
+                    html += `<div class="order-item"><span>${name} x${qty}</span><span>RS ${sum}</span></div>`;
+                });
+
+                // Add Delivery Fee to the list
+                html += `<div class="order-item" style="color: #977257; font-weight: bold;">
+                <span>Fixed Delivery Fee</span>
+                <span>RS ${deliveryFee}</span>
+             </div>`;
+
+                let finalTotal = subtotal + deliveryFee;
+
+                document.getElementById("cName").textContent = nameInput;
+                document.getElementById("cEmail").textContent = emailInput;
+                document.getElementById("orderList").innerHTML = html;
+                document.getElementById("totalVal").textContent = finalTotal;
+
+                const slip = document.getElementById("slip");
+                slip.style.display = "block";
+                slip.scrollIntoView({ behavior: 'smooth' });
+            }
+            addItem(); // Start with one item row
+        </script>
+</body>
+
+</html>

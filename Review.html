@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | Crumb & Crown</title>
+    <style>
+        /* Base Styles - Matched to Home/Menu Page */
+        body {
+            background-color: #c09c83;
+            /* Matches primary background color */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Fixed Navigation - Consistent with Home Page */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(151, 114, 87, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: #fdfaf5;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fdfaf5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e6cbb4;
+        }
+
+        /* Review Content Styling */
+        .container {
+            padding: 120px 50px 50px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #fdfaf5;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Review Cards Grid */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .review-card h3 {
+            margin: 0 0 5px;
+            color: #473021;
+        }
+
+        .stars {
+            color: #ff9800;
+            /* Star color matching site highlights */
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            color: #666;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .date {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Submit Review Form Section */
+        .review-form {
+            background: #fdfaf5;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 60px;
+            color: #473021;
+        }
+
+        .review-form h2 {
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        button {
+            background: #977257;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #473021;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            /* Centers logo and text vertically */
+            gap: 15px;
+            /* Adds space between logo and name */
+            color: #fdfaf5;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo img {
+            height: 45px;
+            /* Adjust this height to fit your nav bar */
+            width: auto;
+            /* Keeps the logo proportions correct */
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="Logo.jpeg" alt="Logo">
+            <span>Crumb & Crown</span>
+        </div>
+        <div class="logo"></div>
+        <div style="color: white; font-weight: bold; font-size: 24px;"></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Menu page.html">Menu</a></li>
+            <li><a href="About us.html">About</a></li>
+            <li><a href="Order Now Page.html">Order Now</a></li>
+            <li><a href="Review.html">Review</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>What Our Customers Say</h1>
+            <p>From the first bite to the last crumb, our royalty treatment speaks for itself.</p>
+        </div>
+
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <h3>Amna Zafar</h3>
+                <p class="review-text">"The Chicken Pizza is unlike anything else in town. The crust is perfect and
+                    the interior is so soft!"</p>
+                <span class="date">January 15, 2026</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <h3>Fatima Ali</h3>
+                <p class="review-text">"Tried the White Vanilla ice cream after seeing it on the menu. It's incredibly
+                    creamy and high quality."</p>
+                <span class="date">January 20, 2026</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <h3>Fatima Asadullah</h3>
+                <p class="review-text">"Best Chicken Bread I've ever had. My kids loved it! Fast delivery service as
+                    well."</p>
+                <span class="date">January 22, 2026</span>
+            </div>
+        </div>
+
+        <div class="review-form">
+            <h2>Leave a Review</h2>
+            <form>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Zunaira" required>
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <select style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ddd;">
+                        <option value="5">5 Stars - Royal Treatment</option>
+                        <option value="4">4 Stars - Delicious</option>
+                        <option value="3">3 Stars - Good</option>
+                        <option value="2">2 Stars - Okay</option>
+                        <option value="1">1 Star - Needs Improvement</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Experience</label>
+                    <textarea rows="5" placeholder="Tell us about your favorite treat..."></textarea>
+                </div>
+                <button type="submit">Submit My Review</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

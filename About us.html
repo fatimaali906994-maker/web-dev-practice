@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Crumb & Crown</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #c09c83;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fdfaf5;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(151, 114, 87, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fdfaf5;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo img {
+            height: 45px;
+            /* Adjust this height to fit your nav bar */
+            width: auto;
+            /* Keeps the logo proportions correct */
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            color: #fdfaf5;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        .content-section {
+            padding: 120px 10% 60px;
+            box-sizing: border-box;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #fdfaf5;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background-color: #977257;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #ff9800;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .info-card p,
+        .info-card li {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #fdfaf5;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .team-member b {
+            color: #ff9800;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="Logo.jpeg" alt="Logo">
+            <span>Crumb & Crown</span>
+        </div>
+        <ul>
+            <li><a href=index.html>Home</a></li>
+            <li><a href="Menu page.html">Menu</a></li>
+            <li><a href="About us.html">About</a></li>
+            <li><a href="Order Now Page.html">Order Now</a></li>
+            <li><a href="Review.html">Review</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-section">
+        <div class="about-header">
+            <h1>Our Story</h1>
+            <p class="tagline">"Where everyday comfort meets a touch of royalty."</p>
+        </div>
+
+        <div class="grid-container">
+            <div class="info-card full-width">
+                <h3>The Crumb & Crown Journey</h3>
+                <p>Born from a love of baking and the belief that simple ingredients can create meaningful moments,
+                    Crumb & Crown started as a small passion. Today, we share warmth, comfort, and care through freshly
+                    baked goods rooted in tradition and crafted with intention.</p>
+                <p>We bake fresh, handcrafted breads and sweets using quality ingredients, golden crusts, and timeless
+                    recipes—because every bite deserves to feel like a treat fit for a crown.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Mission & Vision</h3>
+                <p><b>Mission:</b> We bake happiness! To deliver high-quality, affordable, and innovative bakery items
+                    made with love and freshness.</p>
+                <p><b>Vision:</b> To become the most-loved neighborhood bakery by serving creative and irresistible
+                    baked goods that make every day sweeter.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Business Strategy</h3>
+                <p><b>Revenue Streams:</b> In-store sales, Custom cakes, Bulk event orders, and Home delivery.</p>
+                <p><b>Financial Goals:</b> Maintaining high profit margins through daily fresh production and bulk
+                    purchasing to reduce waste and per-unit costs.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Who We Serve</h3>
+                <ul>
+                    <li>Students & Families</li>
+                    <li>Office Workers & Professionals</li>
+                    <li>Birthday & Event Planners</li>
+                    <li>Cake Lovers of all ages</li>
+                </ul>
+            </div>
+
+
+            <div class="info-card full-width">
+                <h3>Meet the Royal Team</h3>
+                <div class="team-grid">
+                    <div class="team-member"><b>Amna Zafar</b> Organizer</div>
+                    <div class="team-member"><b>Ayesha Ali</b> Presenter</div>
+                    <div class="team-member"><b>Fatima Asadullah</b> Web Developer</div>
+                    <div class="team-member"><b>Fatima Ali</b> Web Developer</div>
+                    <div class="team-member"><b>Zunaira Jamil</b> Web Developer</div>
+                    <div class="team-member"><b>Wajiha Fatima</b> Graphic Designer</div>
+                    <div class="team-member"><b>Eshaal Chaudhary</b> Graphic Designer</div>
+                    <div class="team-member"><b>Zikra Hashim</b> Flowchart Specialist</div>
+                    <div class="team-member"><b>Bakhtawar & Fatima Imran</b> Creative Team</div>
+                </div>
+            </div>
+
+        </div class="info-card full-width" style="text-align: " center" ; background-color: #473021;">
+        <h3>Get in Touch</h3>
+        <p>📍 Karachi, Pakistan | 📞 +923-456-7890 | ✉️ crumb&crown@gmail.com</p>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
