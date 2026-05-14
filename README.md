@@ -1,10 +1,7 @@
-# Fatima Programming
+# My Web Development Journey
+I am learning to build websites using HTML, CSS, and JS.
 
-I am a beginner learning Python and GitHub.
-
-This repository contains my first small programming practice projects.
-
-## Goals
-- Learn Python basics
-- Practice coding regularly
-- Build simple projects step by step
+## Current Goals
+* Build a responsive landing page.
+* Learn CSS Flexbox and Grid.
+* Add interactivity with JavaScript.
